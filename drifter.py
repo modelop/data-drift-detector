@@ -29,6 +29,6 @@ def metrics(data, slot_no):
         pvalues = [x[1] for x in ks_tests]
         list_of_pval = [f"{feat}_p-value" for feat in numerical_features]
         ks_pvalues = dict(zip(list_of_pval, pvalues))
-        ks_pvalues["pvalues"] = ks_pvalues
+        ks_pvalues["pvalues"] = dict(zip(list_of_pval, pvalues))
         yield ks_pvalues
     else: return
