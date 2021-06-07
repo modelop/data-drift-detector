@@ -13,14 +13,8 @@ sample=None
 
 
 #modelop.metrics
-def metrics(data, slot_no):
+def metrics(sample, baseline):
     global baseline, sample
-
-    if slot_no==0:
-        sample=data.copy()
-
-    if slot_no==2:
-        baseline=data.copy()
 
     if sample is not None and baseline is not None:
         numerical_features = baseline.select_dtypes(['int64', 'float64']).columns
