@@ -14,8 +14,6 @@ sample=None
 
 #modelop.metrics
 def metrics(sample, baseline):
-    global baseline, sample
-
     if sample is not None and baseline is not None:
         numerical_features = baseline.select_dtypes(['int64', 'float64']).columns
         ks_tests = [ks_2samp(baseline.loc[:, feat], sample.loc[:, feat]) \
